@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'payments',
+    'rest_framework_swagger',
+    'drf_yasg',
+    # 'django.contrib.staticfiles',
     # 'social_django'
 ]
 
@@ -146,10 +149,12 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER =env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES':['rest_framework.authentication.TokenAuthentication',],
+    
+    # 'DEFAULT_SCHEMA_CLASS': [rest_framework.schemas.coreapi.AutoSchema,]
+    
 }
 
 AUTHENTICATION_BACKENDS = [
@@ -177,8 +182,8 @@ LOGOUT_REDIRECT_URL = '/'
 # ACCOUNT_AUTHENTICATION_METHOD ="email"
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
 
-# RAZORPAY_KEY_ID = ""
-# RAZORPAY_KEY_SECRET =""
+RAZORPAY_KEY_ID = ""
+RAZORPAY_KEY_SECRET =""
 
 
 # SOCIAL_AUTH_PIPELINE = (
